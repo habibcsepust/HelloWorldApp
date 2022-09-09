@@ -13,7 +13,8 @@ import { HiComponent } from './hi/hi.component';
   <ng-container *ngComponentOutlet="component"></ng-container>
   <input type="Submit" value="Switch Component" (click)="SwitchComponent()"/>
   <hr/><hr/>
-  <app-employee></app-employee>
+  <!-- <app-employee></app-employee> -->
+  <app-employees></app-employees>
   <hr/><hr/>
 
   <ng-container *ngComponentOutlet="say"></ng-container>

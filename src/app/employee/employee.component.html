@@ -1,8 +1,21 @@
+
+
 <div>
-  employee works!<br>
-  id={{emp.id}}<br>
-  name={{emp.name}}<br>
-  salary={{emp.salary}}<br>
-  dateOfJoin={{emp.dateOfJoin}}<br>
-  EmployeeType={{emp.empType}}<br>
+  <div *ngIf="selected; then boldEmp; else normalEmp;"></div>
+    <ng-template #boldEmp>
+      <b>
+        id={{emp.id}}<br>
+        name={{emp.name}}<br>
+        salary={{emp.salary}}<br>
+        dateOfJoin={{emp.dateOfJoin}}<br>
+        EmployeeType={{emp.empType}}<br><br>
+      </b>
+    </ng-template>
+    <ng-template #normalEmp>
+        id={{emp.id}}<br>
+        name={{emp.name}}<br>
+        salary={{emp.salary}}<br>
+        dateOfJoin={{emp.dateOfJoin}}<br>
+        EmployeeType={{emp.empType}}<br><br>
+    </ng-template>
 </div>

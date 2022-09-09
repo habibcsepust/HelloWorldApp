@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Employee, EmployeeType } from './Employee';
 
 @Component({
@@ -10,10 +10,14 @@ export class EmployeeComponent implements OnInit {
 
   constructor() { }
 
+  @Input()
   emp:Employee;
 
-  ngOnInit() {
-    this.emp = new Employee(1, "MD. Habibur Rahman", 30000, new Date('09/15/2022'),EmployeeType.Permanent)
-  }
+  @Input()
+  selected:boolean;
 
+
+  ngOnInit() {
+
+  }
 }
