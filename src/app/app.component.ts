@@ -1,7 +1,10 @@
+import { HelloComponent } from './hello/hello.component';
+import { GoodbyComponent } from './goodby/goodby.component';
 import { AlertDangerComponent } from './alert-danger/alert-danger.component';
 import { AlertSuccessComponent } from './alert-success/alert-success.component';
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { HiComponent } from './hi/hi.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,15 @@ import { Component } from '@angular/core';
   template: `
   <ng-container *ngComponentOutlet="component"></ng-container>
   <input type="Submit" value="Switch Component" (click)="SwitchComponent()"/>
+  <hr/><hr/>
+  <app-employee></app-employee>
+  <hr/><hr/>
 
+  <ng-container *ngComponentOutlet="say"></ng-container>
+  <input type="button" value="Hi" (click)="Hi()" />&nbsp;
+  <input type="button" value="Hello" (click)="Hello()" />&nbsp;
+  <input type="button" value="Goodby" (click)="GoodBy()" />&nbsp;
+  <hr/><hr/>
   <app-life-cycle></app-life-cycle>
   <hr><hr>
   {{title}}
@@ -118,5 +129,17 @@ export class AppComponent {
     else{
       this.component = AlertSuccessComponent
     }
+  }
+
+  say:any = HiComponent
+
+  Hi(){
+    this.say=HiComponent
+  }
+  Hello(){
+    this.say=HelloComponent
+  }
+  GoodBy(){
+    this.say=GoodbyComponent
   }
 }
