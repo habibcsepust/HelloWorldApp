@@ -1,3 +1,5 @@
+import { AlertDangerComponent } from './alert-danger/alert-danger.component';
+import { AlertSuccessComponent } from './alert-success/alert-success.component';
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 
@@ -5,6 +7,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   // templateUrl: './app.component.html',
   template: `
+  <ng-container *ngComponentOutlet="component"></ng-container>
+  <input type="Submit" value="Switch Component" (click)="SwitchComponent()"/>
 
   <app-life-cycle></app-life-cycle>
   <hr><hr>
@@ -105,4 +109,14 @@ export class AppComponent {
     }
   ]
   selectedSubject = 18
+
+  component = AlertSuccessComponent
+  SwitchComponent(){
+    if(this.component == AlertSuccessComponent){
+      this.component = AlertDangerComponent
+    }
+    else{
+      this.component = AlertSuccessComponent
+    }
+  }
 }
