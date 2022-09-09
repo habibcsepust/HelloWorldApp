@@ -10,6 +10,7 @@ import { HiComponent } from './hi/hi.component';
 import { HelloComponent } from './hello/hello.component';
 import { GoodbyComponent } from './goodby/goodby.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { EmployeeComponent } from './employee/employee.component';
     HelloComponent,
     GoodbyComponent,
     EmployeeComponent,
+    EmployeesComponent,
   ],
 
   // Dynamic Component Load er jonno lage
