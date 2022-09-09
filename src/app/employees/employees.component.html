@@ -1,0 +1,15 @@
+
+  <b>Employees List:</b><hr>
+
+  <div *ngFor="let e of employees">
+    <!-- id={{e.id}}<br>
+    name={{e.name}}<br>
+    salary={{e.salary}}<br>
+    dateOfJoin={{e.dateOfJoin}}<br>
+    EmployeeType={{e.empType}}<br><br> -->
+
+    <app-employee [emp]="e" [selected]="selectedEmployee == e"></app-employee>
+    <input type="button" value="Select" (click)="SelectEmployee(e)" />
+
+  </div>
+
